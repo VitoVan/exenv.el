@@ -84,7 +84,7 @@
   "these are added to PATH and exec-path when exenv is setup")
 
 (defface exenv-active-elixir-face
-  '((t (:weight bold :foreground "Red")))
+  '((t (:weight bold :foreground "Purple")))
   "The face used to highlight the current elixir on the modeline.")
 
 (defvar exenv--initialized nil
