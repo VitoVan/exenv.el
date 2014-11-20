@@ -16,10 +16,10 @@ Usage
 -----
 
 * `global-exenv-mode` activate / deactivate exenv.el (The current Elixir version is shown in the modeline)
-* `exenv-use-global` will activate your global elixir
+* `exenv-use-global` will activate your global Elixir version
 * `exenv-use` allows you to choose what elixir version you want to use
-* `exenv-use-corresponding` searches for .elixir-version and activates
-  the corresponding elixir
+* `exenv-use-corresponding` searches for .exenv-version and activates
+  the corresponding Elixir version
 
 Configuration
 -------------
@@ -33,17 +33,17 @@ customize exenv.el to search in the right place:
 (setq exenv-installation-dir "/usr/local/exenv")
 ```
 
-*IMPORTANT:*: Currently you need to set this variable before you load exenv.el
+*IMPORTANT:* Currently you need to set this variable before you load exenv.el
 
 **the modeline**
-exenv.el will show you the active elixir in the modeline. If you don't
+exenv.el will show you the active Elixir version in the modeline. If you don't
 like this feature you can disable it:
 
 ```lisp
 (setq exenv-show-active-elixir-in-modeline nil)
 ```
 
-The default modeline representation is the elixir version (colored red) in square
+The default modeline representation is the Elixir version (colored purple) in square
 brackets. You can change the format by customizing the variable:
 
 ```lisp
@@ -51,4 +51,4 @@ brackets. You can change the format by customizing the variable:
 (setq exenv-modeline-function 'exenv--modeline-plain)
 ```
 
-You can also define your own function to format the elixir version as you like.
+You can also define your own function to format the Elixir version the way you want.

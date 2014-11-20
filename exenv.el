@@ -32,9 +32,9 @@
 ;; M-x global-exenv-mode toggle the configuration done by exenv.el
 
 ;; M-x exenv-use-global prepares the current Emacs session to use
-;; the global elixir configured with exenv.
+;; the global Elixir configured with exenv.
 
-;; M-x exenv-use allows you to switch the current session to the elixir
+;; M-x exenv-use allows you to switch the current session to the Elixir
 ;; implementation of your choice.
 
 ;;; Compiler support:
@@ -58,7 +58,7 @@
   :type 'function)
 
 (defcustom exenv-show-active-elixir-in-modeline t
-  "Toggles whether exenv-mode shows the active elixir in the modeline."
+  "Toggles whether exenv-mode shows the active Elixir in the modeline."
   :group 'exenv
   :type 'boolean)
 
@@ -71,7 +71,7 @@
   "path to the exenv executable")
 
 (defvar exenv-elixir-shim (exenv--expand-path "shims" "elixir")
-  "path to the elixir shim executable")
+  "path to the Elixir shim executable")
 
 (defvar exenv-global-version-file (exenv--expand-path "version")
   "path to the global version configuration file of exenv")
@@ -85,7 +85,7 @@
 
 (defface exenv-active-elixir-face
   '((t (:weight bold :foreground "Purple")))
-  "The face used to highlight the current elixir on the modeline.")
+  "The face used to highlight the current Elixir on the modeline.")
 
 (defvar exenv--initialized nil
   "indicates if the current Emacs session has been configured to use exenv")
@@ -96,13 +96,13 @@
 
 ;;;###autoload
 (defun exenv-use-global ()
-  "activate exenv global elixir"
+  "activate exenv global Elixir"
   (interactive)
   (exenv-use (exenv--global-elixir-version)))
 
 ;;;###autoload
 (defun exenv-use-corresponding ()
-  "search for .elixir-version and activate the corresponding elixir"
+  "search for .elixir-version or .exenv-version and activate the corresponding Elixir"
   (interactive)
   (let ((version-file-path (or (exenv--locate-file ".elixir-version")
                                (exenv--locate-file ".exenv-version"))))
@@ -111,7 +111,7 @@
 
 ;;;###autoload
 (defun exenv-use (elixir-version)
-  "choose which elixir you want to activate"
+  "Choose which Elixir you want to activate"
   (interactive
    (let ((picked-elixir (exenv--completing-read "Elixir version: " (exenv/list))))
      (list picked-elixir)))
@@ -194,7 +194,7 @@
 
 ;;;###autoload
 (define-minor-mode global-exenv-mode
-  "use exenv to configure the elixir version used by your Emacs."
+  "use exenv to configure the Elixir version used by your Emacs."
   :global t
   (if global-exenv-mode
       (progn
